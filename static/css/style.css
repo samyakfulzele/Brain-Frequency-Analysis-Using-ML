@@ -1,0 +1,319 @@
+ 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black; 
+            color: white;
+        }
+
+        #sidebar {
+            transition: all 0.3s;
+            background-color: black; 
+            color: white;
+            border-right: 3px solid #6CB6FF;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 250px;
+            padding-top: 100px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #4e5d6c;
+        }
+
+        .sidebar ul li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #2d4373; 
+        }
+
+        .main_content {
+            width: 81%;
+            margin-left: 300px;
+            transition: margin-left 0.3s;
+        }
+
+        .header {
+            background-color:#6CB6FF; ;  
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h2{
+            margin-top: 10px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+        }
+
+        .waves-info {
+            background-color: black; 
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 2px solid #6CB6FF;
+            border-radius: 10px;
+        }
+
+        .waves-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .waves-info ul {
+            padding-left: 20px;
+        }
+
+        .waves-info ul li {
+            margin-bottom: 5px;
+        }
+
+        .waves-info ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .svg-icon {
+            fill: white;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .site-name {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #3b5998; 
+        }
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color:white;
+        }
+
+        .chart-item {
+            width: calc(25% - 10px);
+            margin-bottom: 20px;
+        }
+
+        .chart-item img {
+            width: 300px; 
+            height: auto; 
+        }
+        @media (max-width: 768px) {
+            .chart-item {
+                width: 200px;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+        .recent-activity table {
+            border: 2px solid #4285f4;
+            border-collapse: collapse;
+            width: 100%;
+            color:white;
+        }
+
+        .recent-activity th,
+        .recent-activity td {
+            border: 2px solid #4285f4; 
+            padding: 8px;
+            text-align: left;
+        }
+
+        .recent-activity th {
+            background-color: #4285f4; 
+            color: white;
+        }
+.try-it {
+    background-color:black; 
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: calc(100% - 280px); 
+    float: right; 
+    color:white;
+}
+
+@media (max-width: 992px) {
+    .try-it {
+        width: 100%; 
+        float: none; 
+    }
+}
+
+.try-it h3 {
+    color: #3b5998;
+}
+
+.try-it form {
+    margin-top: 15px;
+}
+
+.try-it .form-group {
+    margin-bottom: 15px;
+}
+
+.try-it .btn-primary {
+    background-color: #3b5998; 
+    border-color: #3b5998;
+}
+
+.try-it .btn-primary:hover {
+    background-color: #2d4373;
+    border-color: #2d4373; }
+
+.try-it #prediction-result {
+    margin-top: 15px;
+}
+.block-section {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.block-title {
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.block-content {
+    border: 2px solid #fff; 
+    padding: 20px;
+    border-radius: 5px;
+}
+.about-us {
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 300px);
+    float: right;
+    color: white;
+}
+
+.about-us h3 {
+    color: #3b5998;
+}
+
+.about-us p {
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .about-us {
+        width: 100%;
+        float: none;
+    }
+}
+
+.section {
+    margin-bottom: 40px;
+    color: white;
+    background-color: black;
+    width: calc(100% - 300px);
+    float: right;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+}
+.section mission{
+background-color:white;
+color:black;
+}
+.section h3 {
+    color: #6CB6FF;
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: white;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    margin-left: 100px;
+    width: 280px;
+    float:left;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h4 {
+    color: #6CB6FF;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: white;
+}
+
+.faq-item {
+    margin-bottom: 40px;
+    color: white;
+    background-color: black;
+    width: calc(100% - 280px);
+    float: right;
+}
+
+.faq-item h4 {
+    color: #6CB6FF;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: white;
+}
+
+.article {
+    margin-bottom: 20px;
+}
+
+.article h4 {
+    color: #6CB6FF;
+    margin-bottom: 10px;
+}
+
+.article p {
+    color: white;
+}
+.section-separator {
+        border-top: 2px solid #6CB6FF;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+ 

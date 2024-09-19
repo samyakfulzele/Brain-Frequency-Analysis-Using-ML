@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Analysis Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styling.css')}}">
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{url_for('static',filename='images/logo.png')}}" alt="Brain Frequency Analysis Logo">
+            <span class="logo-text">Brain Frequency Analysis</span>
+        </div>
+        <div class="nav-links">
+            <a href="">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#FAQs">FAQs</a>
+            <a href="#contact">Contact</a>
+            <a href="#team">Team</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#user_login_modal">Log in</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#register_login_modal">Sign Up</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <a href="#contact" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+<section class="hero1">
+    <div class="brain-images">
+        <div class="brain-image1 animated">
+            <h2>Confused:</h2>
+            <p>Confusion refers to a state of uncertainty or lack of clarity in understanding or decision-making.
+                It often arises when conflicting information or options are presented, leading to a sense of
+                disorientation or perplexity.</p>
+        </div>
+        <div class="brain-image2 animated">
+            <h2>Concentration:</h2>
+            <p>Concentration is focused attention, essential for staying on task and achieving goals.
+                It involves directing mental energy towards a specific objective, blocking out distractions to
+                maintain productivity and clarity of thought.</p>
+        </div>
+        <div class="brain-image3 animated">
+            <h2>Not-Confused</h2>
+            <p>Clear and focused, with full attention and understanding, free from confusion or uncertainty.</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="wave-info-section">
+    <div class="wave-info animated">
+        <h2>Brain Wave Frequencies</h2>
+        <p>Delta waves: <span>0.5 to 4 Hz</span></p>
+        <p>Theta waves: <span>4 to 8 Hz</span></p>
+        <p>Alpha waves: <span>8 to 14 Hz</span></p>
+        <p>Beta waves: <span>14 to 30 Hz</span></p>
+        <p>Gamma waves: <span>30 to 100 Hz</span></p>
+    </div>
+    <div class="rotating-image animated">
+        <img src="{{url_for('static',filename='images/image2.jpg')}}" alt="Rotating Image">
+    </div>
+</section>
+<hr color="#6CB6FF">
+<section class="intro-section">
+    <div class="container">
+        <div class="intro-content">
+            <div class="intro-image animated">
+                <img src="{{url_for('static',filename='images/brain.png')}}" alt="Brain Image">
+            </div>
+            <div class="intro-text animated">
+                <h2>Brain Frequencies</h2>
+                <p>Brain frequencies, measured in hertz (Hz), represent the electrical activity of the brain. Different frequencies are associated with various states of consciousness and cognitive functions.</p>
+                <p>By analyzing brain waves, we can determine a person's concentration level and identify whether they are confused or not. This analysis is crucial for assessing mental states and optimizing cognitive performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<hr color="#6CB6FF">
+<section class="about-section animated" id="about">
+    <h2>About Us</h2>
+    <p>We are a team of developers committed to revolutionizing mental health analysis through innovative technology. Our mission is to provide accessible and accurate brain frequency analysis tools to enhance mental well-being worldwide.</p>
+</section>
+
+<section class="faq-section animated" id="FAQs">
+    <h2>FAQs</h2>
+    <div class="faq">
+        <h3>How does brain frequency analysis work?</h3>
+        <p>Brain frequency analysis involves measuring electrical activity in the brain to identify different brain wave patterns associated with various states of consciousness and cognitive functions.</p>
+    </div>
+    <div class="faq">
+        <h3>Is brain frequency analysis safe?</h3>
+        <p>Yes, brain frequency analysis is non-invasive and safe. It involves recording and analyzing brain wave activity using EEG technology, which is widely used in clinical and research settings.</p>
+    </div>
+    <div class="faq">
+        <h3>What are the applications of brain frequency analysis?</h3>
+        <p>Brain frequency analysis has various applications, including diagnosing neurological disorders, monitoring brain activity during sleep, and optimizing cognitive performance in sports and education.</p>
+    </div>
+    <div class="faq">
+        <h3>Can brain frequency analysis help with mental health conditions?</h3>
+        <p>Yes, brain frequency analysis can provide valuable insights into mental health conditions such as depression, anxiety, and ADHD. It can assist in personalized treatment planning and monitoring treatment progress.</p>
+    </div>
+</section>
+
+    </div>
+</section>
+<section class="last-section" id="contact">
+    <div class="section-column contact-section animated">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form method="POST" action="{{url_for('contact')}}">
+                {% if contact_success %}
+                    <script>
+                        alert("Contact Details Submitted!")
+                    </script>
+                {% elif contact_fail %}
+                    <script>
+                       alert("Some Error Occured! Try again!")
+                    </script>
+                {% endif %}
+                <div class="form-group">
+                    <input type="text" id="name" name="c_name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="c_email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="c_message" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <div class="section-column articles-section animated">
+        <h2>Recent Articles</h2>
+        <ul class="articles-list">
+           <li> <a href="https://www.sciencedirect.com/science/article/pii/S095943881830154X">Advances in EEG-based Brain-Computer Interface Systems</a></li>
+
+<li><a href="https://ieeexplore.ieee.org/document/9045861">EEG-Based Detection of Cognitive States</a></li>
+
+<li><a href="https://www.frontiersin.org/articles/10.3389/fnins.2019.00197/full">Applications of EEG in Mental Health Diagnosis</a></li>
+
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7744073/">EEG-Based Emotion Recognition for Human-Machine Interaction</a></li>
+
+        </ul>
+    </div>
+    <div class="section-column team-section animated" id="team">
+        <h2>Our Team</h2>
+        <div class="team-member">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                <circle cx="12" cy="7" r="4" />
+                <path d="M2 20s3-3 10-3 10 3 10 3" />
+            </svg>
+            <p>Sana Khan</p>
+        </div>
+        <div class="team-member">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                <circle cx="12" cy="7" r="4" />
+                <path d="M2 20s3-3 10-3 10 3 10 3" />
+            </svg>
+            <p>Samyak Fulzele</p>
+        </div>
+        <div class="team-member">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                <circle cx="12" cy="7" r="4" />
+                <path d="M2 20s3-3 10-3 10 3 10 3" />
+            </svg>
+            <p>Sarth Devalekar</p>
+        </div>
+    </div>
+</section>
+<script src="{{url_for('static',filename='js/script.js')}}"></script>
+<footer class="footer">
+    <p>&copy; 2024 Brain Frequency Analysis. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
+<!-- Society Login Modal -->
+<div class="modal fade" data-bs-backdrop="static"  id="user_login_modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light">
+      <div class="modal-header">
+        <h1 class="modal-title" style="margin-left: 40%;">Login</h1>
+        <button type="button" class="close bg-light fs-5" style="border : 0;position: absolute;top: 20px;right: 20px;" data-bs-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{{url_for('login')}}" style="margin-left: 22%;margin-top: 2%;" class="p-4">   
+            {% if login_fail %}
+                <script>
+                    alert("Invalid Credentials! Try Again!")
+                </script>
+            {% endif %}
+            <input type="text" name="uname_email" class="border-1 p-2 m-2" id="email" placeholder="Email or Username" required>
+            <br>
+            <input type="password" name="password" class="border-1 p-2 m-2" id="password" placeholder="Password" required>
+            <br>
+          <input type="submit" style="margin-left: 25%;margin-top: 2%;" value="Login" class="btn btn-primary">
+        </form>
+      </div>
+      <div class="modal-footer p-4">
+        <h6 style="position: absolute;left: 25%;">Don't have an account? <a href="" data-bs-toggle="modal" data-bs-target="#register_login_modal">Sign up</a></h6>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Login Modal end -->
+<!-- Register Modal -->
+<div class="modal fade" data-bs-backdrop="static"  id="register_login_modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light">
+      <div class="modal-header">
+        <h1 class="modal-title" style="margin-left: 35%;">Register</h1>
+        <button type="button" class="close bg-light fs-5" style="border : 0;position: absolute;top: 20px;right: 20px;" data-bs-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signup-form" action="{{url_for('register')}}" style="margin-left: 25%;margin-top: 2%;" method="post">
+            {% if register_success %}
+                <script>
+                    alert("Registration Successfull!")
+                </script>
+            {% elif register_fail %}
+                <script>
+                    alert("Registration not Successfull!")
+                </script>
+            {% elif password_fail %}
+                <script>
+                   alert("Password and Confirm Password doesn't match! Try Again!")
+                </script> 
+            {% endif %}
+            <input type="text" name="username" class="border-1 p-2 m-2" id="username" placeholder="Username" required>
+            <br>
+            <input type="email" name="email" class="border-1 p-2 m-2" id="email" placeholder="Email" required>
+            <br>
+            <input type="password" name="password" class="border-1 p-2 m-2" id="password" placeholder="Password" required>
+            <br>
+            <input type="password" name="confirm-password" class="border-1 p-2 m-2" id="confirm-password" placeholder="Confirm Password" required>
+            <br>
+            <input type="submit" style="margin-left: 22%;margin-top: 2%;" value="Register" class="btn btn-primary">
+        </form>
+      </div>
+      <div class="modal-footer p-4">
+        <p style="position: absolute;left: 25%;">Already have an account? <a href="" data-bs-toggle="modal" data-bs-target="#user_login_modal">Log in</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Register Modal end -->
